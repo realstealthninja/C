@@ -91,7 +91,7 @@ var NAVTREE =
       [ "Searching", "d5/d88/md__d_i_r_e_c_t_o_r_y.html#autotoc_md55", null ],
       [ "Sorting", "d5/d88/md__d_i_r_e_c_t_o_r_y.html#autotoc_md56", null ]
     ] ],
-    [ "Sample solutions for <a href=\"http://exercism.io/\">exercism.io</a>", "d7/db5/md_exercism__r_e_a_d_m_e.html", null ],
+    [ "Sample solutions for <a href=\"http://exercism.io/\" target=\"_blank\" >exercism.io</a>", "d7/db5/md_exercism__r_e_a_d_m_e.html", null ],
     [ "Hash algorithms", "d4/dcb/md_hash__r_e_a_d_m_e.html", null ],
     [ "LeetCode", "df/d58/md_leetcode__r_e_a_d_m_e.html", null ],
     [ "ProjectEuler", "d8/d81/md_project_euler__r_e_a_d_m_e.html", null ],
@@ -121,10 +121,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"d4/d68/qr__decompose_8h.html#a82b20e027437df768d7e994cf4cae29f",
-"d7/d3b/group__hash.html#gae4836b42b998b336298f3b19dcc9cdeb",
-"db/de2/naval__battle_8c.html#a59224afd73372b4f52415203e315f6e1",
-"dir_4b6f782e158b0b98da980a0e11a23a15.html"
+"d5/d38/bubble__sort__recursion_8c.html#ae1a3968e7947464bee7714f6d43b7002",
+"da/d02/binary__search__tree_8c.html#ae4a66d8b0c2b0d626aea45977e358c83",
+"de/dff/heap__sort__2_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
