@@ -1,5 +1,10 @@
 var NAVTREEINDEX1 =
 {
+"d5/d23/qr__decomposition_8c.html":[15,0,12,7],
+"d5/d23/qr__decomposition_8c.html#a840291bc02cba5474a4cb46a9b9566fe":[15,0,12,7,0],
+"d5/d38/bubble__sort__recursion_8c.html":[15,0,15,3],
+"d5/d38/bubble__sort__recursion_8c.html#aa8989f6c9bfd1f040854fa18b180114f":[15,0,15,3,0],
+"d5/d38/bubble__sort__recursion_8c.html#ad126fa7239be97373c96861adc70b1d3":[15,0,15,3,2],
 "d5/d38/bubble__sort__recursion_8c.html#ae1a3968e7947464bee7714f6d43b7002":[15,0,15,3,3],
 "d5/d38/bubble__sort__recursion_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4":[15,0,15,3,1],
 "d5/d3d/problem__5_2sol2_8c.html":[15,0,13,18,1],
@@ -114,8 +119,8 @@ var NAVTREEINDEX1 =
 "d6/dcd/md__c_o_n_t_r_i_b_u_t_i_n_g.html#autotoc_md27":[3,1,3,1],
 "d6/dcd/md__c_o_n_t_r_i_b_u_t_i_n_g.html#autotoc_md28":[3,1,3,2],
 "d6/dcd/md__c_o_n_t_r_i_b_u_t_i_n_g.html#autotoc_md29":[3,1,3,3],
-"d6/ded/shell__sort2_8c.html":[15,0,15,10],
-"d6/ded/shell__sort2_8c.html#a0ddf1224851353fc92bfbff6f499fa97":[15,0,15,10,0],
+"d6/ded/shell__sort2_8c.html":[15,0,15,11],
+"d6/ded/shell__sort2_8c.html#a0ddf1224851353fc92bfbff6f499fa97":[15,0,15,11,0],
 "d6/df3/graph_8h_source.html":[15,0,2,4,0],
 "d7/d0c/hash__sdbm_8c.html":[15,0,9,3],
 "d7/d0c/hash__sdbm_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4":[15,0,9,3,0],
@@ -244,10 +249,5 @@ var NAVTREEINDEX1 =
 "d9/deb/min__printf_8h_source.html":[15,0,3,2],
 "da/d02/binary__search__tree_8c.html":[15,0,2,1,0],
 "da/d02/binary__search__tree_8c.html#a01151353aa2d9688934ed39208133241":[15,0,2,1,0,10],
-"da/d02/binary__search__tree_8c.html#a031cc98830742bca57c0da81a0fb779f":[15,0,2,1,0,7],
-"da/d02/binary__search__tree_8c.html#a0f18adaaca5ecc410cfa16dd2a3684dc":[15,0,2,1,0,6],
-"da/d02/binary__search__tree_8c.html#a6983e8a91a3d25d7d000807f18ba2748":[15,0,2,1,0,2],
-"da/d02/binary__search__tree_8c.html#ad50f3debc5323bb7b71933effb64f30f":[15,0,2,1,0,4],
-"da/d02/binary__search__tree_8c.html#adf2169c1008551b20c4a59fcf0c9ab3b":[15,0,2,1,0,9],
-"da/d02/binary__search__tree_8c.html#adff4c6248834a9944a1fb03a20230c9c":[15,0,2,1,0,3]
+"da/d02/binary__search__tree_8c.html#a031cc98830742bca57c0da81a0fb779f":[15,0,2,1,0,7]
 };

@@ -78,6 +78,11 @@ var NAVTREEINDEX0 =
 "d1/d6b/group__kohonen__2d.html#gadc22d512c00a9f5799ee067f4fb90b4b":[13,2,2,4],
 "d1/d6b/group__kohonen__2d.html#gaf5ce14f026d6d231bef29161bac2b485":[13,2,2,3],
 "d1/d6b/group__kohonen__2d.html#gaffe776513b24d84b39af8ab0930fef7f":[13,2,2,1],
+"d1/d94/odd__even__sort_8c.html":[15,0,15,8],
+"d1/d94/odd__even__sort_8c.html#a17761a0788916faded6e2ca1f478ad33":[15,0,15,8,1],
+"d1/d94/odd__even__sort_8c.html#aa8dca7b867074164d5f45b0f3851269d":[15,0,15,8,3],
+"d1/d94/odd__even__sort_8c.html#ac2eee54959bc040cfcb56d2d8047853a":[15,0,15,8,2],
+"d1/d94/odd__even__sort_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4":[15,0,15,8,0],
 "d1/d99/structcluster.html":[13,2,1,1],
 "d1/d99/structcluster.html#a10fa7010c12d0f03a422d68321495479":[13,2,1,1,2],
 "d1/d99/structcluster.html#a13278ef636c1d9bd9ce8fad736f4c570":[13,2,1,1,1],
@@ -244,10 +249,5 @@ var NAVTREEINDEX0 =
 "d4/dea/problem__14_2sol1_8c.html":[15,0,13,4,0],
 "d4/dea/problem__14_2sol1_8c.html#a3c04138a5bfe5d72780bb7e82a18e627":[15,0,13,4,0,1],
 "d4/dea/problem__14_2sol1_8c.html#a81c1df5c17cb16bcc16e346fcff6fa80":[15,0,13,4,0,0],
-"d4/dfe/struct_dict.html":[14,0,10],
-"d5/d23/qr__decomposition_8c.html":[15,0,12,7],
-"d5/d23/qr__decomposition_8c.html#a840291bc02cba5474a4cb46a9b9566fe":[15,0,12,7,0],
-"d5/d38/bubble__sort__recursion_8c.html":[15,0,15,3],
-"d5/d38/bubble__sort__recursion_8c.html#aa8989f6c9bfd1f040854fa18b180114f":[15,0,15,3,0],
-"d5/d38/bubble__sort__recursion_8c.html#ad126fa7239be97373c96861adc70b1d3":[15,0,15,3,2]
+"d4/dfe/struct_dict.html":[14,0,10]
 };
