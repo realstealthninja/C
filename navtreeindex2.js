@@ -1,5 +1,10 @@
 var NAVTREEINDEX2 =
 {
+"d9/dd7/struct__cantor__set.html#abd2176c3cc3a1d85d15bbeaace35fa03":[14,0,1,2],
+"d9/dd7/struct__cantor__set.html#acfc25ab716a3c79be8a5a4cab94e8def":[14,0,1,0],
+"d9/deb/min__printf_8h.html":[15,0,4,2],
+"d9/deb/min__printf_8h.html#a0a848efdf2ee124bba62e056eb9ab824":[15,0,4,2,10],
+"d9/deb/min__printf_8h.html#a33e08c05f8c656a0fee465c2e8d2ecf9":[15,0,4,2,7],
 "d9/deb/min__printf_8h.html#a409d428c337bf5476567a228274f49f1":[15,0,4,2,3],
 "d9/deb/min__printf_8h.html#a4d63203d920bebd6a96f5f4aeccb21e5":[15,0,4,2,9],
 "d9/deb/min__printf_8h.html#a8421f89b76edcf21292c5100bfca586b":[15,0,4,2,8],
@@ -55,7 +60,7 @@ var NAVTREEINDEX2 =
 "da/d6c/exponential__search_8c.html#aa8dca7b867074164d5f45b0f3851269d":[15,0,15,1,4],
 "da/d6c/exponential__search_8c.html#aae97ef76c065e91c188f1f8c8076869a":[15,0,15,1,1],
 "da/d6c/exponential__search_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4":[15,0,15,1,3],
-"da/d90/stack__linked__list_2stack_8h_source.html":[15,0,3,8,0,0],
+"da/d90/stack__linked__list_2stack_8h_source.html":[15,0,3,9,0,0],
 "da/d93/prime_8c.html":[15,0,12,7],
 "da/d93/prime_8c.html#a6384596f117decd77da25af95ab1704f":[15,0,12,7,0],
 "da/d93/prime_8c.html#ae1a3968e7947464bee7714f6d43b7002":[15,0,12,7,2],
@@ -244,10 +249,5 @@ var NAVTREEINDEX2 =
 "de/d0c/insertion__sort__recursive_8c.html":[15,0,16,6],
 "de/d0c/insertion__sort__recursive_8c.html#aa8dca7b867074164d5f45b0f3851269d":[15,0,16,6,2],
 "de/d0c/insertion__sort__recursive_8c.html#ac0f2228420376f4db7e1274f2b41667c":[15,0,16,6,0],
-"de/d20/md_data_structures_dictionary__r_e_a_d_m_e.html":[5],
-"de/d58/structquaternion__.html":[13,0,2,0],
-"de/d58/structquaternion__.html#a37819eb7d76c65c37a9c2a63f01f65b2":[13,0,2,0,1],
-"de/d58/structquaternion__.html#a596abbab688731119c1f23b26a7ac17a":[13,0,2,0,0],
-"de/d58/structquaternion__.html#a835e2ba72517fbb29d0d4e3cb4c2914f":[13,0,2,0,2],
-"de/d5a/group__quaternions.html":[13,0]
+"de/d20/md_data_structures_dictionary__r_e_a_d_m_e.html":[5]
 };

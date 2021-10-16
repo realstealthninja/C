@@ -1,5 +1,6 @@
 var NAVTREEINDEX1 =
 {
+"d4/dbd/problem__23_2sol2_8c.html#a3ab61b5a1c4f2288625d160aa0ea8478":[15,0,14,12,1,3],
 "d4/dbd/problem__23_2sol2_8c.html#a3c04138a5bfe5d72780bb7e82a18e627":[15,0,14,12,1,4],
 "d4/dbd/problem__23_2sol2_8c.html#ac5d600bf3077f4188afc4c5cd2c40eaf":[15,0,14,12,1,0],
 "d4/dbd/problem__23_2sol2_8c.html#af920a16d6ef69dd604b283f427892e06":[15,0,14,12,1,5],
@@ -74,6 +75,10 @@ var NAVTREEINDEX1 =
 "d5/db8/vectors__3d_8c.html":[15,0,7,2],
 "d5/db8/vectors__3d_8c.html#a840291bc02cba5474a4cb46a9b9566fe":[15,0,7,2,3],
 "d5/db8/vectors__3d_8c.html#aa8dca7b867074164d5f45b0f3851269d":[15,0,7,2,5],
+"d5/de2/sentinel__linear__search_8c.html":[15,0,15,5],
+"d5/de2/sentinel__linear__search_8c.html#a16a7a1ef83db52643fe23d48280065ce":[15,0,15,5,1],
+"d5/de2/sentinel__linear__search_8c.html#aa8dca7b867074164d5f45b0f3851269d":[15,0,15,5,2],
+"d5/de2/sentinel__linear__search_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4":[15,0,15,5,0],
 "d5/df4/group__sudoku.html":[13,4],
 "d5/df4/group__sudoku.html#ga1cd43df3f4187845ce186042fe53e6f1":[13,4,3],
 "d5/df4/group__sudoku.html#ga3a0ec150ac9d0cb6b28279d36d95d72f":[13,4,2],
@@ -186,7 +191,7 @@ var NAVTREEINDEX1 =
 "d7/ddb/problem__23_2sol1_8c.html#a3c04138a5bfe5d72780bb7e82a18e627":[15,0,14,12,0,4],
 "d7/ddb/problem__23_2sol1_8c.html#a4f128410e6582fe26488e2316cc96e17":[15,0,14,12,0,2],
 "d7/ddb/problem__23_2sol1_8c.html#ac5d600bf3077f4188afc4c5cd2c40eaf":[15,0,14,12,0,0],
-"d7/de0/stack_8h_source.html":[15,0,3,8,1],
+"d7/de0/stack_8h_source.html":[15,0,3,9,1],
 "d7/dfd/structdual__quat__.html":[13,0,3,0],
 "d7/dfd/structdual__quat__.html#a1b05fbc4135e4f9b731423f26527543d":[13,0,3,0,0],
 "d7/dfd/structdual__quat__.html#ad663036ace6a586f90a2f89386f7731a":[13,0,3,0,1],
@@ -244,10 +249,5 @@ var NAVTREEINDEX1 =
 "d9/dcc/prim_8c.html#addac7a8c7bfd3e5573dad1f6aeff7768":[15,0,9,0,5],
 "d9/dcc/prim_8c.html#aff3f4c22009b2aa4e385a76a8a1cdc1c":[15,0,9,0,4],
 "d9/dd7/struct__cantor__set.html":[14,0,1],
-"d9/dd7/struct__cantor__set.html#a2f7f9f19125725d3e5673fdb4ac8cfb1":[14,0,1,1],
-"d9/dd7/struct__cantor__set.html#abd2176c3cc3a1d85d15bbeaace35fa03":[14,0,1,2],
-"d9/dd7/struct__cantor__set.html#acfc25ab716a3c79be8a5a4cab94e8def":[14,0,1,0],
-"d9/deb/min__printf_8h.html":[15,0,4,2],
-"d9/deb/min__printf_8h.html#a0a848efdf2ee124bba62e056eb9ab824":[15,0,4,2,10],
-"d9/deb/min__printf_8h.html#a33e08c05f8c656a0fee465c2e8d2ecf9":[15,0,4,2,7]
+"d9/dd7/struct__cantor__set.html#a2f7f9f19125725d3e5673fdb4ac8cfb1":[14,0,1,1]
 };
