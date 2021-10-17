@@ -141,11 +141,11 @@ Functions</h2></td></tr>
 
 <p>Main function. </p>
 <dl class="section return"><dt>Returns</dt><dd>0 on exit </dd></dl>
-<div class="fragment"><div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>          {</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <a class="code hl_function" href="../../d5/de2/sentinel__linear__search_8c.html#aa8dca7b867074164d5f45b0f3851269d">test</a>();  <span class="comment">// run self-test implementations</span></div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>}</div>
-<div class="ttc" id="asentinel__linear__search_8c_html_aa8dca7b867074164d5f45b0f3851269d"><div class="ttname"><a href="../../d5/de2/sentinel__linear__search_8c.html#aa8dca7b867074164d5f45b0f3851269d">test</a></div><div class="ttdeci">static void test()</div><div class="ttdoc">Self-test implementations.</div><div class="ttdef"><b>Definition:</b> sentinel_linear_search.c:61</div></div>
+<div class="fragment"><div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>          {</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <a class="code hl_function" href="../../d5/de2/sentinel__linear__search_8c.html#aa8dca7b867074164d5f45b0f3851269d">test</a>();  <span class="comment">// run self-test implementations</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>}</div>
+<div class="ttc" id="asentinel__linear__search_8c_html_aa8dca7b867074164d5f45b0f3851269d"><div class="ttname"><a href="../../d5/de2/sentinel__linear__search_8c.html#aa8dca7b867074164d5f45b0f3851269d">test</a></div><div class="ttdeci">static void test()</div><div class="ttdoc">Self-test implementations.</div><div class="ttdef"><b>Definition:</b> sentinel_linear_search.c:59</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -207,18 +207,16 @@ Here is the call graph for this function:</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordtype">int</span> temp = arr[len-1]; </div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    arr[len-1] = key;</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordtype">int</span> i;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordflow">for</span>(i=0;arr[len-1]!=arr[i];i++){</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keywordflow">if</span>(i==len-1){</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        }</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    }</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordtype">int</span> i = 0;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordflow">while</span> (arr[len-1] != arr[i]) {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        i++;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    }</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    arr[len-1] = temp;</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    arr[len-1] = temp;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordflow">return</span> i != len-1 ? i : -1;</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>     </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>}</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordflow">return</span> i != len-1 ? i : -1;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>     </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -248,18 +246,18 @@ Here is the call graph for this function:</div>
 
 <p>Self-test implementations. </p>
 <dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
-<div class="fragment"><div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                  {</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keywordtype">int</span> n,i;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    n = 5;</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="comment">/* init array */</span></div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordtype">int</span> arr[] = { 1, 2, 2, 6, 99, 100, 999 };</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    assert(<a class="code hl_function" href="../../d5/de2/sentinel__linear__search_8c.html#a16a7a1ef83db52643fe23d48280065ce">sentinel_linear_search</a>( arr, n, 1 )==0);</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    assert(<a class="code hl_function" href="../../d5/de2/sentinel__linear__search_8c.html#a16a7a1ef83db52643fe23d48280065ce">sentinel_linear_search</a>( arr, n, 2 )==1);</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    assert(<a class="code hl_function" href="../../d5/de2/sentinel__linear__search_8c.html#a16a7a1ef83db52643fe23d48280065ce">sentinel_linear_search</a>( arr, n, 6 )==3);</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    assert(<a class="code hl_function" href="../../d5/de2/sentinel__linear__search_8c.html#a16a7a1ef83db52643fe23d48280065ce">sentinel_linear_search</a>( arr, n, 101 )==-1);</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    printf(<span class="stringliteral">&quot;All test cases have successfully passed!\n&quot;</span>);</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>} </div>
+<div class="fragment"><div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                  {</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordtype">int</span> n,i;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    n = 5;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="comment">/* init array */</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordtype">int</span> arr[] = { 1, 2, 2, 6, 99, 100, 999 };</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    assert(<a class="code hl_function" href="../../d5/de2/sentinel__linear__search_8c.html#a16a7a1ef83db52643fe23d48280065ce">sentinel_linear_search</a>( arr, n, 1 )==0);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    assert(<a class="code hl_function" href="../../d5/de2/sentinel__linear__search_8c.html#a16a7a1ef83db52643fe23d48280065ce">sentinel_linear_search</a>( arr, n, 2 )==1);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    assert(<a class="code hl_function" href="../../d5/de2/sentinel__linear__search_8c.html#a16a7a1ef83db52643fe23d48280065ce">sentinel_linear_search</a>( arr, n, 6 )==3);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    assert(<a class="code hl_function" href="../../d5/de2/sentinel__linear__search_8c.html#a16a7a1ef83db52643fe23d48280065ce">sentinel_linear_search</a>( arr, n, 101 )==-1);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    printf(<span class="stringliteral">&quot;All test cases have successfully passed!\n&quot;</span>);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>} </div>
 <div class="ttc" id="asentinel__linear__search_8c_html_a16a7a1ef83db52643fe23d48280065ce"><div class="ttname"><a href="../../d5/de2/sentinel__linear__search_8c.html#a16a7a1ef83db52643fe23d48280065ce">sentinel_linear_search</a></div><div class="ttdeci">int sentinel_linear_search(int arr[], int len, int key)</div><div class="ttdoc">for IO operations</div><div class="ttdef"><b>Definition:</b> sentinel_linear_search.c:36</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
