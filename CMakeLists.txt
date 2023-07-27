@@ -50,6 +50,7 @@ endif()
 # to configure and compile files in the respective folders
 if (CMAKE_SYSTEM_NAME STREQUAL "Windows")
     add_subdirectory(scilab)
+    add_definitions(-DFORK_WINDOWS)
 endif ()
 add_subdirectory(developer_tools)
 add_subdirectory(hash)
