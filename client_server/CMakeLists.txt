@@ -1,5 +1,6 @@
 if(WIN32)
     check_include_file(winsock2.h WINSOCK_HEADER)
+    target_link_libraries(${testname} forkwindows.c)
 else()
     check_include_file(arpa/inet.h ARPA_HEADERS)
 endif()
