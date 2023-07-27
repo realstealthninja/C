@@ -18,6 +18,8 @@ if(ARPA_HEADERS OR WINSOCK_HEADER)
         add_executable(${testname} ${testsourcefile})
         check_symbol_exists(FORK_WINDOWS "${testsourcefile}" HAVE_FORK_WINDOWS)
 
+        option(FORK_WINDOWS "Use FORK_WINDOWS" OFF)
+
         if (OpenMP_C_FOUND)
             target_link_libraries(${testname} PRIVATE OpenMP::OpenMP_C)
         endif ()

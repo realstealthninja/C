@@ -17,7 +17,8 @@
  * can be represented using the TCP server-client model & socket programming
  */
 
-#ifdef _WIN32 or _WIN64
+#ifdef _WIN32  // or _WIN64
+#define FORK_WINDOWS ON
 #define bzero(b, len) \
     (memset((b), '\0', (len)), (void)0) /**< BSD name not in windows */
 #define pid_t int
@@ -26,7 +27,6 @@
 #include <io.h>
 #include <windows.h>
 #include <winsock2.h>  /// For the type in_addr_t and in_port_t
-#define FORK_WINDOWS 1
 #define sleep(a) Sleep(a * 1000)
 #else
 #include <arpa/inet.h>  /// For the type in_addr_t and in_port_t
