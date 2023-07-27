@@ -23,8 +23,9 @@
 #define pid_t int
 #include <Ws2tcpip.h>
 #include <io.h>
-#include <winsock2.h>  /// For the type in_addr_t and in_port_t
 #include <windows.h>
+#include <winsock2.h>  /// For the type in_addr_t and in_port_t
+#include "scilab/forkWindows.h"
 #define sleep(a) Sleep(a * 1000)
 #else
 #include <arpa/inet.h>  /// For the type in_addr_t and in_port_t

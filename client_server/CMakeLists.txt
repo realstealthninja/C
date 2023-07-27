@@ -4,6 +4,8 @@ else()
     check_include_file(arpa/inet.h ARPA_HEADERS)
 endif()
 
+target_exclude_sources(${CMAKE_CURRENT_SOURCE_DIR} "scilab")
+
 if(ARPA_HEADERS OR WINSOCK_HEADER)
     # If necessary, use the RELATIVE flag, otherwise each source file may be listed
     # with full pathname. RELATIVE may makes it easier to extract an executable name

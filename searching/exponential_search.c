@@ -81,7 +81,7 @@ int main()
 static void test()
 {
     // empty array
-    int64_t arr_empty[] = {};
+    int64_t arr_empty[0] = {};
     assert(exponential_search(arr_empty, 0, 10) == -1);
     // elent not found
     int64_t arr_found[] = {1, 2, 3};
