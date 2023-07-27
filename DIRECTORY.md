@@ -305,6 +305,11 @@
     * [Sol1](https://github.com/TheAlgorithms/C/blob/HEAD/project_euler/problem_9/sol1.c)
     * [Sol2](https://github.com/TheAlgorithms/C/blob/HEAD/project_euler/problem_9/sol2.c)
 
+## Scilab
+  * [Bool](https://github.com/TheAlgorithms/C/blob/HEAD/scilab/bool.h)
+  * [Forkwindows](https://github.com/TheAlgorithms/C/blob/HEAD/scilab/forkwindows.c)
+  * [Forkwindows](https://github.com/TheAlgorithms/C/blob/HEAD/scilab/forkwindows.h)
+
 ## Searching
   * [Binary Search](https://github.com/TheAlgorithms/C/blob/HEAD/searching/binary_search.c)
   * [Exponential Search](https://github.com/TheAlgorithms/C/blob/HEAD/searching/exponential_search.c)
