@@ -27,7 +27,7 @@
 #include <windows.h>
 #include <winsock2.h>
 #define sleep(a) Sleep(a * 1000)
-#define FORK_WINDOWS true
+#define FORK_WINDOWS 1
 #else
 #include <arpa/inet.h>  /// For the type in_addr_t and in_port_t
 #include <netdb.h>  /// For structures returned by the network database library - formatted internet addresses and port numbers
