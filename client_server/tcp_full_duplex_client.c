@@ -21,11 +21,10 @@
 #define bzero(b, len) \
     (memset((b), '\0', (len)), (void)0) /**< BSD name not in windows */
 #define pid_t int
+#include <windows.h>
 #include <Ws2tcpip.h>
 #include <io.h>
-#include <windows.h>
-#include <winsock2.h>  /// For the type in_addr_t and in_port_t
-#include "./scilab/forkwindows.h"
+#include "../scilab/forkwindows.h"
 #define sleep(a) Sleep(a * 1000)
 #else
 #include <arpa/inet.h>  /// For the type in_addr_t and in_port_t
