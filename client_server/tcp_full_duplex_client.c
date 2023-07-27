@@ -18,7 +18,6 @@
  */
 
 #ifdef _WIN32
-#define FORK_WINDOWS
 #define bzero(b, len) \
     (memset((b), '\0', (len)), (void)0) /**< BSD name not in windows */
 #define pid_t int
