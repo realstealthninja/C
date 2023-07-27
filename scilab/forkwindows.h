@@ -24,6 +24,189 @@
 /**
  * simulate fork on Windows
  */
+#include <WinNT.h>
+#include <setjmp.h>
+#include <windows.h>
+
+/*--------------------------------------------------------------------------*/
+typedef LONG NTSTATUS;
+/*--------------------------------------------------------------------------*/
+typedef struct _SYSTEM_HANDLE_INFORMATION
+{
+    ULONG ProcessId;
+    UCHAR ObjectTypeNumber;
+    UCHAR Flags;
+    USHORT Handle;
+    PVOID Object;
+    ACCESS_MASK GrantedAccess;
+} SYSTEM_HANDLE_INFORMATION, *PSYSTEM_HANDLE_INFORMATION;
+/*--------------------------------------------------------------------------*/
+typedef struct _OBJECT_ATTRIBUTES
+{
+    ULONG Length;
+    HANDLE RootDirectory;
+    PVOID /* really PUNICODE_STRING */ ObjectName;
+    ULONG Attributes;
+    PVOID SecurityDescriptor;       /* type SECURITY_DESCRIPTOR */
+    PVOID SecurityQualityOfService; /* type SECURITY_QUALITY_OF_SERVICE */
+} OBJECT_ATTRIBUTES, *POBJECT_ATTRIBUTES;
+/*--------------------------------------------------------------------------*/
+typedef enum _MEMORY_INFORMATION_
+{
+    MemoryBasicInformation,
+    MemoryWorkingSetList,
+    MemorySectionName,
+    MemoryBasicVlmInformation
+} MEMORY_INFORMATION_CLASS;
+/*--------------------------------------------------------------------------*/
+typedef struct _CLIENT_ID
+{
+    HANDLE UniqueProcess;
+    HANDLE UniqueThread;
+} CLIENT_ID, *PCLIENT_ID;
+/*--------------------------------------------------------------------------*/
+typedef struct _USER_STACK
+{
+    PVOID FixedStackBase;
+    PVOID FixedStackLimit;
+    PVOID ExpandableStackBase;
+    PVOID ExpandableStackLimit;
+    PVOID ExpandableStackBottom;
+} USER_STACK, *PUSER_STACK;
+/*--------------------------------------------------------------------------*/
+typedef LONG KPRIORITY;
+typedef ULONG_PTR KAFFINITY;
+typedef KAFFINITY *PKAFFINITY;
+/*--------------------------------------------------------------------------*/
+typedef struct _THREAD_BASIC_INFORMATION
+{
+    NTSTATUS ExitStatus;
+    PVOID TebBaseAddress;
+    CLIENT_ID ClientId;
+    KAFFINITY AffinityMask;
+    KPRIORITY Priority;
+    KPRIORITY BasePriority;
+} THREAD_BASIC_INFORMATION, *PTHREAD_BASIC_INFORMATION;
+/*--------------------------------------------------------------------------*/
+typedef enum _SYSTEM_INFORMATION_CLASS
+{
+    SystemHandleInformation = 0x10
+} SYSTEM_INFORMATION_CLASS;
+/*--------------------------------------------------------------------------*/
+typedef NTSTATUS(NTAPI *ZwWriteVirtualMemory_t)(
+    IN HANDLE ProcessHandle, IN PVOID BaseAddress, IN PVOID Buffer,
+    IN ULONG NumberOfBytesToWrite, OUT PULONG NumberOfBytesWritten OPTIONAL);
+/*--------------------------------------------------------------------------*/
+typedef NTSTATUS(NTAPI *ZwCreateProcess_t)(
+    OUT PHANDLE ProcessHandle, IN ACCESS_MASK DesiredAccess,
+    IN POBJECT_ATTRIBUTES ObjectAttributes, IN HANDLE InheriteFromProcessHandle,
+    IN BOOLEAN InheritHandles, IN HANDLE SectionHandle OPTIONAL,
+    IN HANDLE DebugPort OPTIONAL, IN HANDLE ExceptionPort OPTIONAL);
+/*--------------------------------------------------------------------------*/
+typedef NTSTATUS(WINAPI *ZwQuerySystemInformation_t)(
+    SYSTEM_INFORMATION_CLASS SystemInformationClass, PVOID SystemInformation,
+    ULONG SystemInformationLength, PULONG ReturnLength);
+typedef NTSTATUS(NTAPI *ZwQueryVirtualMemory_t)(
+    IN HANDLE ProcessHandle, IN PVOID BaseAddress,
+    IN MEMORY_INFORMATION_CLASS MemoryInformationClass,
+    OUT PVOID MemoryInformation, IN ULONG MemoryInformationLength,
+    OUT PULONG ReturnLength OPTIONAL);
+/*--------------------------------------------------------------------------*/
+typedef NTSTATUS(NTAPI *ZwGetContextThread_t)(IN HANDLE ThreadHandle,
+                                              OUT PCONTEXT Context);
+typedef NTSTATUS(NTAPI *ZwCreateThread_t)(
+    OUT PHANDLE ThreadHandle, IN ACCESS_MASK DesiredAccess,
+    IN POBJECT_ATTRIBUTES ObjectAttributes, IN HANDLE ProcessHandle,
+    OUT PCLIENT_ID ClientId, IN PCONTEXT ThreadContext,
+    IN PUSER_STACK UserStack, IN BOOLEAN CreateSuspended);
+/*--------------------------------------------------------------------------*/
+typedef NTSTATUS(NTAPI *ZwResumeThread_t)(IN HANDLE ThreadHandle,
+                                          OUT PULONG SuspendCount OPTIONAL);
+typedef NTSTATUS(NTAPI *ZwClose_t)(IN HANDLE ObjectHandle);
+typedef NTSTATUS(NTAPI *ZwQueryInformationThread_t)(
+    IN HANDLE ThreadHandle, IN THREAD_INFORMATION_CLASS ThreadInformationClass,
+    OUT PVOID ThreadInformation, IN ULONG ThreadInformationLength,
+    OUT PULONG ReturnLength OPTIONAL);
+/*--------------------------------------------------------------------------*/
+static ZwCreateProcess_t ZwCreateProcess = NULL;
+static ZwQuerySystemInformation_t ZwQuerySystemInformation = NULL;
+static ZwQueryVirtualMemory_t ZwQueryVirtualMemory = NULL;
+static ZwCreateThread_t ZwCreateThread = NULL;
+static ZwGetContextThread_t ZwGetContextThread = NULL;
+static ZwResumeThread_t ZwResumeThread = NULL;
+static ZwClose_t ZwClose = NULL;
+static ZwQueryInformationThread_t ZwQueryInformationThread = NULL;
+static ZwWriteVirtualMemory_t ZwWriteVirtualMemory = NULL;
+/*--------------------------------------------------------------------------*/
+#define NtCurrentProcess() ((HANDLE)-1)
+#define NtCurrentThread() ((HANDLE)-2)
+/* we use really the Nt versions - so the following is just for completeness */
+#define ZwCurrentProcess() NtCurrentProcess()
+#define ZwCurrentThread() NtCurrentThread()
+#define STATUS_INFO_LENGTH_MISMATCH ((NTSTATUS)0xC0000004L)
+#define STATUS_SUCCESS ((NTSTATUS)0x00000000L)
+/*--------------------------------------------------------------------------*/
+/* setjmp env for the jump back into the fork() function */
+static jmp_buf jenv;
+/*--------------------------------------------------------------------------*/
+/* entry point for our child thread process - just longjmp into fork */
+static int child_entry(void)
+{
+    longjmp(jenv, 1);
+    return 0;
+}
+/*--------------------------------------------------------------------------*/
+static BOOL haveLoadedFunctionsForFork(void)
+{
+    HMODULE ntdll = GetModuleHandle("ntdll");
+    if (ntdll == NULL)
+    {
+        return FALSE;
+    }
+
+    if (ZwCreateProcess && ZwQuerySystemInformation && ZwQueryVirtualMemory &&
+        ZwCreateThread && ZwGetContextThread && ZwResumeThread &&
+        ZwQueryInformationThread && ZwWriteVirtualMemory && ZwClose)
+    {
+        return TRUE;
+    }
+
+    ZwCreateProcess =
+        (ZwCreateProcess_t)GetProcAddress(ntdll, "ZwCreateProcess");
+    ZwQuerySystemInformation = (ZwQuerySystemInformation_t)GetProcAddress(
+        ntdll, "ZwQuerySystemInformation");
+    ZwQueryVirtualMemory =
+        (ZwQueryVirtualMemory_t)GetProcAddress(ntdll, "ZwQueryVirtualMemory");
+    ZwCreateThread = (ZwCreateThread_t)GetProcAddress(ntdll, "ZwCreateThread");
+    ZwGetContextThread =
+        (ZwGetContextThread_t)GetProcAddress(ntdll, "ZwGetContextThread");
+    ZwResumeThread = (ZwResumeThread_t)GetProcAddress(ntdll, "ZwResumeThread");
+    ZwQueryInformationThread = (ZwQueryInformationThread_t)GetProcAddress(
+        ntdll, "ZwQueryInformationThread");
+    ZwWriteVirtualMemory =
+        (ZwWriteVirtualMemory_t)GetProcAddress(ntdll, "ZwWriteVirtualMemory");
+    ZwClose = (ZwClose_t)GetProcAddress(ntdll, "ZwClose");
+
+    if (ZwCreateProcess && ZwQuerySystemInformation && ZwQueryVirtualMemory &&
+        ZwCreateThread && ZwGetContextThread && ZwResumeThread &&
+        ZwQueryInformationThread && ZwWriteVirtualMemory && ZwClose)
+    {
+        return TRUE;
+    }
+    else
+    {
+        ZwCreateProcess = NULL;
+        ZwQuerySystemInformation = NULL;
+        ZwQueryVirtualMemory = NULL;
+        ZwCreateThread = NULL;
+        ZwGetContextThread = NULL;
+        ZwResumeThread = NULL;
+        ZwQueryInformationThread = NULL;
+        ZwWriteVirtualMemory = NULL;
+        ZwClose = NULL;
+    }
+    return FALSE;
+}
 int fork(void)
 {
     HANDLE hProcess = 0, hThread = 0;
