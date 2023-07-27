@@ -1,18 +1,14 @@
 # If necessary, use the RELATIVE flag, otherwise each source file may be listed
 # with full pathname. The RELATIVE flag makes it easier to extract an executable's name
 # automatically.
+include(GNUInstallDirs)
+file( GLOB APP_SOURCES RELATIVE . *.c )
+# file( GLOB APP_SOURCES ${CMAKE_SOURCE_DIR}/*.c )
+# AUX_SOURCE_DIRECTORY(${CMAKE_CURRENT_SOURCE_DIR} APP_SOURCES)
+    # I used a simple string replace, to cut off .cpp.
+add_library(forkwindows SHARED forkwindows.c forkwindows.h bool.h )
 
-file( GLOB APP_SOURCES RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} *.c )
-foreach( testsourcefile ${APP_SOURCES} )
-    string( REPLACE ".c" "" testname ${testsourcefile} )
-    add_executable( ${testname} ${testsourcefile} )
-
-    if(OpenMP_C_FOUND)
-        target_link_libraries(${testname} OpenMP::OpenMP_C)
-    endif()
-    if(MATH_LIBRARY)
-        target_link_libraries(${testname} ${MATH_LIBRARY})
-    endif()
-    install(TARGETS ${testname} DESTINATION "bin/scilab")
-
-endforeach( testsourcefile ${APP_SOURCES} )
+set_target_properties(forkwindows PROPERTIES PUBLIC_HEADER forkwindows.h)
+install(TARGETS forkwindows
+            LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+            PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
