@@ -17,8 +17,8 @@
 #define __FORK_WINDOWS_H__
 
 #ifndef _WIN32
-#endif /* __FORK_WINDOWS_H__ */
-return;
+#include <stdlib.h>
+exit(0);
 #endif
 
 #include "bool.h"

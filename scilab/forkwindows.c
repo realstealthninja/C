@@ -15,7 +15,8 @@
 /*--------------------------------------------------------------------------*/
 
 #ifndef _WIN32
-return;
+#include <stdlib.h>
+exit(0);
 #endif
 
 #include "forkwindows.h"
