@@ -48,6 +48,9 @@ endif()
 
 ## Add subdirectories containing CMakeLists.txt
 # to configure and compile files in the respective folders
+if (CMAKE_SYSTEM_NAME STREQUAL "Windows")
+    add_subdirectory(scilab)
+endif ()
 add_subdirectory(developer_tools)
 add_subdirectory(hash)
 add_subdirectory(misc)
@@ -65,9 +68,6 @@ add_subdirectory(process_scheduling_algorithms)
 add_subdirectory(numerical_methods)
 add_subdirectory(math)
 add_subdirectory(cipher)
-if(CMAKE_SYSTEM_NAME STREQUAL "Windows")
-    add_subdirectory(scilab)
-endif()
 
 ## Configure Doxygen documentation system
 cmake_policy(SET CMP0054 NEW)
