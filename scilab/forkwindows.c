@@ -13,6 +13,11 @@
  *
  */
 /*--------------------------------------------------------------------------*/
+
+#ifndef _WIN32
+return;
+#endif
+
 #include "forkwindows.h"
 
 #include <WinNT.h>

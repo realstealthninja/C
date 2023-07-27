@@ -16,6 +16,11 @@
 #ifndef __FORK_WINDOWS_H__
 #define __FORK_WINDOWS_H__
 
+#ifndef _WIN32
+#endif /* __FORK_WINDOWS_H__ */
+return;
+#endif
+
 #include "bool.h"
 
 /* http://technet.microsoft.com/en-us/library/bb497007.aspx */
