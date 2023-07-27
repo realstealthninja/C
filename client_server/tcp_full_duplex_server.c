@@ -17,7 +17,7 @@
  * can be represented using the TCP server-client model & socket programming
  */
 
-#ifdef _WIN32
+#ifdef _WIN32 or _WIN64
 #define bzero(b, len) \
     (memset((b), '\0', (len)), (void)0) /**< BSD name not in windows */
 #define pid_t int
