@@ -65,7 +65,6 @@ add_subdirectory(process_scheduling_algorithms)
 add_subdirectory(numerical_methods)
 add_subdirectory(math)
 add_subdirectory(cipher)
-add_subdirectory(scilab)
 
 ## Configure Doxygen documentation system
 cmake_policy(SET CMP0054 NEW)
