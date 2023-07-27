@@ -22,6 +22,7 @@ if(ARPA_HEADERS OR WINSOCK_HEADER)
         if(MATH_LIBRARY)
             target_link_libraries(${testname} PRIVATE ${MATH_LIBRARY})
         endif()
+        target_link_libraries(${testname} PRIVATE forkwindows)
         
         # if(HAS_UNISTD)
         #     target_compile_definitions(${testname} PRIVATE HAS_UNISTD)
