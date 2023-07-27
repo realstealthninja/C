@@ -12,3 +12,4 @@ set_target_properties(forkwindows PROPERTIES PUBLIC_HEADER forkwindows.h)
 install(TARGETS forkwindows
             LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
             PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
+add_executable(${testname} ${testsourcefile})
