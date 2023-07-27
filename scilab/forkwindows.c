@@ -13,7 +13,7 @@
  *
  */
 /*--------------------------------------------------------------------------*/
-#include "forkWindows.h"
+#include "forkwindows.h"
 
 #include <WinNT.h>
 #include <setjmp.h>
