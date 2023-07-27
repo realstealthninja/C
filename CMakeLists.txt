@@ -65,7 +65,9 @@ add_subdirectory(process_scheduling_algorithms)
 add_subdirectory(numerical_methods)
 add_subdirectory(math)
 add_subdirectory(cipher)
-add_subdirectory(scilab)
+if(CMAKE_SYSTEM_NAME STREQUAL "Windows")
+    add_subdirectory(scilab)
+endif()
 
 ## Configure Doxygen documentation system
 cmake_policy(SET CMP0054 NEW)

@@ -14,11 +14,6 @@
  */
 /*--------------------------------------------------------------------------*/
 
-#ifndef _WIN32
-#include <stdlib.h>
-exit(0);
-#endif
-
 #include "forkwindows.h"
 
 #include <WinNT.h>
