@@ -16,7 +16,7 @@ if(ARPA_HEADERS OR WINSOCK_HEADER)
         # I used a simple string replace, to cut off .cpp.
         string(REPLACE ".c" "" testname ${testsourcefile})
         add_executable(${testname} ${testsourcefile})
-        check_symbol_exists(FORK_WINDOWS "${testsourcefile}" HAVE_FORK_WINDOWS)
+        check_symbol_exists(FORK_WINDOWS ${testsourcefile} HAVE_FORK_WINDOWS)
 
         if (OpenMP_C_FOUND)
             target_link_libraries(${testname} PRIVATE OpenMP::OpenMP_C)
