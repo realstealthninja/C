@@ -9,5 +9,5 @@ file( GLOB APP_SOURCES RELATIVE . *.c )
 add_library(forkwindows SHARED forkwindows.h forkwindows.c bool.h)
 set_target_properties(forkwindows PROPERTIES PUBLIC_HEADER forkwindows.h)
 install(TARGETS forkwindows
-            LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
-            PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
+        LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}/scilab
+        PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/scilib)
