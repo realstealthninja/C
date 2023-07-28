@@ -7,7 +7,7 @@ file( GLOB APP_SOURCES RELATIVE . *.c )
 # AUX_SOURCE_DIRECTORY(${CMAKE_CURRENT_SOURCE_DIR} APP_SOURCES)
     # I used a simple string replace, to cut off .cpp.
 add_library(forkwindows SHARED forkwindows.c forkwindows.h bool.h)
-
+target_include_directories(forkwindows PUBLIC ./)
 set_target_properties(forkwindows PROPERTIES PUBLIC_HEADER forkwindows.h)
 install(TARGETS forkwindows
             LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
