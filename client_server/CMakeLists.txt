@@ -15,6 +15,10 @@ if(ARPA_HEADERS OR WINSOCK_HEADER)
     foreach( testsourcefile ${APP_SOURCES} )
         # I used a simple string replace, to cut off .cpp.
         string(REPLACE ".c" "" testname ${testsourcefile})
+
+        if (testname STREQUAL "fork" OR testname STREQUAL "bool")
+            continue()
+        endif()
         add_executable(${testname} ${testsourcefile})
 
         if (OpenMP_C_FOUND)
