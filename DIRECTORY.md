@@ -176,6 +176,7 @@
 ## Include
   * Scilab
     * [Bool](https://github.com/TheAlgorithms/C/blob/HEAD/include/scilab/bool.h)
+    * [Forkwindows](https://github.com/TheAlgorithms/C/blob/HEAD/include/scilab/forkwindows.c)
     * [Forkwindows](https://github.com/TheAlgorithms/C/blob/HEAD/include/scilab/forkwindows.h)
 
 ## Machine Learning
@@ -309,9 +310,6 @@
   * Problem 9
     * [Sol1](https://github.com/TheAlgorithms/C/blob/HEAD/project_euler/problem_9/sol1.c)
     * [Sol2](https://github.com/TheAlgorithms/C/blob/HEAD/project_euler/problem_9/sol2.c)
-
-## Scilab
-  * [Forkwindows](https://github.com/TheAlgorithms/C/blob/HEAD/scilab/forkwindows.c)
 
 ## Searching
   * [Binary Search](https://github.com/TheAlgorithms/C/blob/HEAD/searching/binary_search.c)
