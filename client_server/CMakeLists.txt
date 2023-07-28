@@ -16,8 +16,10 @@ if(ARPA_HEADERS OR WINSOCK_HEADER)
         # I used a simple string replace, to cut off .cpp.
         string(REPLACE ".c" "" testname ${testsourcefile})
 
-        if (testname STREQUAL "fork" OR testname STREQUAL "bool")
-            continue()
+        if(NOT WIN32)
+            if(${testname} STREQUAL "fork" OR ${testname} STREQUAL "bool")
+                continue()
+            endif()
         endif()
         add_executable(${testname} ${testsourcefile})
 
