@@ -13,8 +13,9 @@ if(ARPA_HEADERS OR WINSOCK_HEADER)
     # file( GLOB APP_SOURCES ${CMAKE_SOURCE_DIR}/*.c )
     # AUX_SOURCE_DIRECTORY(${CMAKE_CURRENT_SOURCE_DIR} APP_SOURCES)
     foreach( testsourcefile ${APP_SOURCES} )
-        check_symbol_exists(FORK_WINDOWS ${testsourcefile} HAVE_FORK_WINDOWS)
-
+        if (CMAKE_SYSTEM_NAME STREQUAL "Windows")
+            check_symbol_exists(FORK_WINDOWS ${testsourcefile} HAVE_FORK_WINDOWS)
+        endif ()
         # I used a simple string replace, to cut off .cpp.
         string(REPLACE ".c" "" testname ${testsourcefile})
         add_executable(${testname} ${testsourcefile})
