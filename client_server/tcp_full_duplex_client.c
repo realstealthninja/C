@@ -21,6 +21,7 @@
 #define bzero(b, len) \
     (memset((b), '\0', (len)), (void)0) /**< BSD name not in windows */
 #define pid_t int
+#define close _close
 #include <Ws2tcpip.h>
 #include <io.h>
 #include <windows.h>
@@ -152,14 +153,7 @@ int main()
      * place simultaneously this represents FULL DUPLEX COMMUNICATION
      */
     pid_t pid;
-
-    #ifdef _WIN32
-    #ifdef FORK_WINDOWS
     pid = fork();
-    #endif
-    #else
-    pid = fork();
-    #endif
 
     if (pid == 0)  /// Value of 0 is for child process
     {
