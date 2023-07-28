@@ -2,7 +2,6 @@ if(WIN32)
     check_include_file(winsock2.h WINSOCK_HEADER)
     check_include_file(scilab/forkwindows.h FORK_WINDOWS)
 
-    add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/include/scilab)
     target_link_libraries(${testname} forkwindows)
 else()
     check_include_file(arpa/inet.h ARPA_HEADERS)
