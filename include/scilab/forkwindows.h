@@ -14,7 +14,7 @@
  */
 /*--------------------------------------------------------------------------*/
 #ifndef __FORK_WINDOWS_H__
-#define __FORK_WINDOWS_H__
+#define __FORK_WINDOWS_H __declspec(dllexport)
 #include "bool.h"
 
 /* http://technet.microsoft.com/en-us/library/bb497007.aspx */
@@ -30,6 +30,7 @@ int fork(void);
  * and load these symbols
  */
 BOOL haveLoadedFunctionsForFork(void);
-
+#else
+#define __FORK_WINDOWS_H __declspec(dllimport)
 #endif /* __FORK_WINDOWS_H__ */
 /*--------------------------------------------------------------------------*/

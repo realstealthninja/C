@@ -13,7 +13,7 @@
  *
  */
 /*--------------------------------------------------------------------------*/
-#include "../include/scilab/forkwindows.h"
+#include "forkwindows.h"
 
 #include <setjmp.h>
 #include <windows.h>
