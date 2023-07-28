@@ -23,8 +23,8 @@
     (memset((b), '\0', (len)), (void)0) /**< BSD name not in windows */
 #define pid_t int
 #include <Ws2tcpip.h>
-#include <forkwindows.h>
 #include <io.h>
+#include <scilab/forkwindows.h>
 #include <windows.h>
 #include <winsock2.h>
 #define sleep(a) Sleep(a * 1000)
