@@ -15,8 +15,8 @@
 /*--------------------------------------------------------------------------*/
 #ifndef __FORK_WINDOWS_H__
 #define __FORK_WINDOWS_H__
-
 #include "bool.h"
+#include "forkwindows_export.h"
 
 /* http://technet.microsoft.com/en-us/library/bb497007.aspx */
 /* http://undocumented.ntinternals.net/ */
@@ -24,13 +24,13 @@
 /**
  * simulate fork on Windows
  */
-int fork(void);
+int FORKWINDOWS_EXPORT fork(void);
 
 /**
-* check if symbols to simulate fork are present
-* and load these symbols
+ * check if symbols to simulate fork are present
+ * and load these symbols
  */
-BOOL haveLoadedFunctionsForFork(void);
+BOOL FORKWINDOWS_EXPORT haveLoadedFunctionsForFork(void);
 
 #endif /* __FORK_WINDOWS_H__ */
 /*--------------------------------------------------------------------------*/
