@@ -11,7 +11,7 @@ set_target_properties(forkwindows PROPERTIES PUBLIC_HEADER forkwindows.h)
 message(STATUS panqkg: ${CMAKE_INSTALL_LIBDIR})
 message(STATUS panqkg: ${CMAKE_INSTALL_INCLUDED})
 install(TARGETS forkwindows
-        LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
-        PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/scilib)
+        LIBRARY DESTINATION bin/scilib
+        PUBLIC_HEADER DESTINATION bin/scilib)
 install(FILES forkwindows.h bool.h
-        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/scilib)
+        DESTINATION bin/scilib)
