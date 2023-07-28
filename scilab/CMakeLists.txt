@@ -7,5 +7,4 @@ file(GLOB APP_SOURCES RELATIVE . *.c)
 # AUX_SOURCE_DIRECTORY(${CMAKE_CURRENT_SOURCE_DIR} APP_SOURCES)
 # I used a simple string replace, to cut off .cpp.
 
-add_library(forkwindows SHARED forkwindows.c)
-set_target_properties(forkwindows PROPERTIES PUBLIC_HEADER scilab/forkwindows.h)
+add_library(forkwindows forkwindows.c)
