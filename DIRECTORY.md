@@ -7,7 +7,10 @@
   * [Rot13](https://github.com/TheAlgorithms/C/blob/HEAD/cipher/rot13.c)
 
 ## Client Server
+  * [Bool](https://github.com/TheAlgorithms/C/blob/HEAD/client_server/bool.h)
   * [Client](https://github.com/TheAlgorithms/C/blob/HEAD/client_server/client.c)
+  * [Fork](https://github.com/TheAlgorithms/C/blob/HEAD/client_server/fork.c)
+  * [Fork](https://github.com/TheAlgorithms/C/blob/HEAD/client_server/fork.h)
   * [Remote Command Exec Udp Client](https://github.com/TheAlgorithms/C/blob/HEAD/client_server/remote_command_exec_udp_client.c)
   * [Remote Command Exec Udp Server](https://github.com/TheAlgorithms/C/blob/HEAD/client_server/remote_command_exec_udp_server.c)
   * [Server](https://github.com/TheAlgorithms/C/blob/HEAD/client_server/server.c)
@@ -172,12 +175,6 @@
   * [Hash Djb2](https://github.com/TheAlgorithms/C/blob/HEAD/hash/hash_djb2.c)
   * [Hash Sdbm](https://github.com/TheAlgorithms/C/blob/HEAD/hash/hash_sdbm.c)
   * [Hash Xor8](https://github.com/TheAlgorithms/C/blob/HEAD/hash/hash_xor8.c)
-
-## Include
-  * Scilab
-    * [Bool](https://github.com/TheAlgorithms/C/blob/HEAD/include/scilab/bool.h)
-    * [Forkwindows](https://github.com/TheAlgorithms/C/blob/HEAD/include/scilab/forkwindows.c)
-    * [Forkwindows](https://github.com/TheAlgorithms/C/blob/HEAD/include/scilab/forkwindows.h)
 
 ## Machine Learning
   * [Adaline Learning](https://github.com/TheAlgorithms/C/blob/HEAD/machine_learning/adaline_learning.c)
