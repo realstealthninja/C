@@ -48,9 +48,6 @@ endif()
 
 ## Add subdirectories containing CMakeLists.txt
 # to configure and compile files in the respective folders
-if (CMAKE_SYSTEM_NAME STREQUAL "Windows")
-    add_subdirectory(scilab)
-endif ()
 add_subdirectory(developer_tools)
 add_subdirectory(hash)
 add_subdirectory(misc)
