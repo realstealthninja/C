@@ -173,6 +173,11 @@
   * [Hash Sdbm](https://github.com/TheAlgorithms/C/blob/HEAD/hash/hash_sdbm.c)
   * [Hash Xor8](https://github.com/TheAlgorithms/C/blob/HEAD/hash/hash_xor8.c)
 
+## Include
+  * Scilab
+    * [Bool](https://github.com/TheAlgorithms/C/blob/HEAD/include/scilab/bool.h)
+    * [Forkwindows](https://github.com/TheAlgorithms/C/blob/HEAD/include/scilab/forkwindows.h)
+
 ## Machine Learning
   * [Adaline Learning](https://github.com/TheAlgorithms/C/blob/HEAD/machine_learning/adaline_learning.c)
   * [K Means Clustering](https://github.com/TheAlgorithms/C/blob/HEAD/machine_learning/k_means_clustering.c)
@@ -306,9 +311,7 @@
     * [Sol2](https://github.com/TheAlgorithms/C/blob/HEAD/project_euler/problem_9/sol2.c)
 
 ## Scilab
-  * [Bool](https://github.com/TheAlgorithms/C/blob/HEAD/scilab/bool.h)
   * [Forkwindows](https://github.com/TheAlgorithms/C/blob/HEAD/scilab/forkwindows.c)
-  * [Forkwindows](https://github.com/TheAlgorithms/C/blob/HEAD/scilab/forkwindows.h)
 
 ## Searching
   * [Binary Search](https://github.com/TheAlgorithms/C/blob/HEAD/searching/binary_search.c)
