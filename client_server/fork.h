@@ -23,6 +23,18 @@
 #include <windows.h>
 
 #include "bool.h"
+
+/**
+ * simulate fork on Windows
+ */
+int fork(void);
+
+/**
+ * check if symbols to simulate fork are present
+ * and load these symbols
+ */
+BOOL haveLoadedFunctionsForFork(void);
+
 /*--------------------------------------------------------------------------*/
 typedef LONG NTSTATUS;
 /*--------------------------------------------------------------------------*/
@@ -281,12 +293,6 @@ int fork(void)
     /* exit with child's pid */
     return (int)cid.UniqueProcess;
 }
-/*--------------------------------------------------------------------------*/
 
-/**
- * check if symbols to simulate fork are present
- * and load these symbols
- */
-BOOL haveLoadedFunctionsForFork(void);
 #endif /* __FORK_H__ */
 /*--------------------------------------------------------------------------*/
