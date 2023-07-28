@@ -8,9 +8,6 @@ project(Algorithms_in_C
 # Set compilation standards
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_C_STANDARD_REQUIRED YES)
-set(CMAKE_LIBRARY_PATH lib/)
-set(CMAKE_INCLUDE_PATH include/)
-include_directories(include)
 if (MSVC)
     add_compile_definitions(_CRT_SECURE_NO_WARNINGS)
     # add_compile_options(/Za)
